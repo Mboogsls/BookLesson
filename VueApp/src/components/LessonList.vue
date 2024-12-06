@@ -154,7 +154,7 @@
       class="btn btn-success btn-sm w-100 mt-2"
       :disabled="cart.length === 0"
     >
-      Checkout
+      View Checkout
     </button>
   </div>
 </div>
