@@ -244,14 +244,14 @@ export default {
   methods: {
     async fetchLessons() {
       try {
-        const response = await fetch("http://localhost:5000/lessons");
+        const response = await fetch("https://booklessonapi.onrender.com/lessons");
         this.lessons = await response.json();
       } catch (error) {
         console.error("Error fetching lessons:", error);
       }
     },
     createLesson() {
-      fetch("http://localhost:5000/lessons", {
+      fetch("https://booklessonapi.onrender.com/lessons", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(this.newLesson),
