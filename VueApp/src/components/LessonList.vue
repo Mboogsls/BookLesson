@@ -77,7 +77,7 @@
                     class="form-check-input"
                     @change="sortLessons"
                   />
-                  Subject&nbsp;
+                  Subject &nbsp;&nbsp;
                 </label>
               </div>
               <div>
@@ -89,7 +89,7 @@
                     class="form-check-input"
                     @change="sortLessons"
                   />
-                  Location&nbsp;
+                  Location &nbsp;&nbsp;
                 </label>
               </div>
               <div>
@@ -101,9 +101,8 @@
                     class="form-check-input"
                     @change="sortLessons"
                   />
-                  Price&nbsp;
+                  Price &nbsp;&nbsp;
                 </label>
-                
               </div>
             </div>
           </div>
