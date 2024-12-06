@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <!-- Lesson Creation Form -->
-      <div class="col-md-3 card mr-2">
+      <div style="margin-right: 3px;" class="col card">
         <h5 class="mt-3 text-center">Create New Lesson</h5>
         <form @submit.prevent="createLesson" class="card-body">
           <div class="form-group mb-2">
