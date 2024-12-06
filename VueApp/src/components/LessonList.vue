@@ -103,12 +103,7 @@
                   />
                   Price&nbsp;
                 </label>
-                <button
-                  class="btn btn-sm btn-outline-secondary"
-                  @click="toggleSortDirection"
-                >
-                  {{ sortDirection === 'asc' ? 'Ascending' : 'Descending' }}
-                </button>
+                
               </div>
             </div>
           </div>
@@ -135,34 +130,79 @@
           </div>
         </div>
 
-        <!-- Cart Section -->
-        <div v-if="cart.length > 0" class="card mt-3">
-          <div class="card-header">
-            <h6>Your Cart</h6>
-          </div>
-          <div class="card-body">
-            <div
-              v-for="(lesson, index) in cart"
-              :key="index"
-              class="cart-item mb-2 d-flex justify-content-between"
-            >
-              <span>{{ lesson.subject }} - ${{ lesson.price }}</span>
-              <button
-                @click="removeFromCart(index)"
-                class="btn btn-danger btn-sm"
-              >
-                Remove
-              </button>
-            </div>
-            <button
-              @click="checkout"
-              class="btn btn-success btn-sm w-100 mt-2"
-              :disabled="cart.length === 0"
-            >
-              Checkout
-            </button>
-          </div>
-        </div>
+     <!-- Cart Section -->
+<div v-if="cart.length > 0" class="card mt-3">
+  <div class="card-header">
+    <h6>Your Cart</h6>
+  </div>
+  <div class="card-body">
+    <div
+      v-for="(lesson, index) in cart"
+      :key="index"
+      class="cart-item mb-2 d-flex justify-content-between"
+    >
+      <span>{{ lesson.subject }} - ${{ lesson.price }}</span>
+      <button
+        @click="removeFromCart(index)"
+        class="btn btn-danger btn-sm"
+      >
+        Remove
+      </button>
+    </div>
+    <button
+      @click="toggleCheckout"
+      class="btn btn-success btn-sm w-100 mt-2"
+      :disabled="cart.length === 0"
+    >
+      Checkout
+    </button>
+  </div>
+</div>
+
+<!-- Checkout Section -->
+<div v-if="showCheckout">
+  <form id="checkout-form" class="p-4 bg-light rounded shadow-sm mt-3">
+    <h3 class="mb-4 text-center">Checkout</h3>
+    
+    <!-- Name Input -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        placeholder="Enter your name"
+        @input="validateForm"
+        v-model="name"
+      />
+    </div>
+    
+    <!-- Phone Input -->
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone:</label>
+      <input
+        type="text"
+        id="phone"
+        class="form-control"
+        placeholder="Enter your phone number"
+        @input="validateForm"
+        v-model="phone"
+      />
+    </div>
+
+    <!-- Checkout Button -->
+    <button
+      type="submit"
+      class="btn btn-primary w-100"
+      @click="submitOrder"
+    >
+      Checkout
+    </button>
+  </form>
+</div>
+
+
+
       </div>
     </div>
   </div>
@@ -174,6 +214,12 @@ export default {
     return {
       lessons: [],
       cart: [],
+      name: "",
+      phone: "",
+      showCheckout: false,
+      isNameValid: false,
+      isPhoneValid: false,
+      isFormValid: false,
       searchQuery: "",
       sortAttribute: "subject",
       newLesson: {
@@ -191,6 +237,9 @@ export default {
       return this.lessons.filter((lesson) =>
         lesson.subject.toLowerCase().includes(this.searchQuery.toLowerCase())
       );
+    },
+    isFormValidated() {
+      return this.isNameValid && this.isPhoneValid && this.name && this.phone;
     },
   },
   methods: {
@@ -239,27 +288,28 @@ export default {
       alert("Proceeding to checkout!");
       this.cart = [];
     },
+    toggleCheckout() {
+      this.showCheckout = !this.showCheckout; // Toggle checkout visibility
+    },
   },
   mounted() {
     this.fetchLessons();
   },
-  sortLessons() {
-    this.lessons.sort((a, b) => {
-      if (typeof a[this.sortAttribute] === "string") {
-        return this.sortDirection === "asc"
-          ? a[this.sortAttribute].localeCompare(b[this.sortAttribute])
-          : b[this.sortAttribute].localeCompare(a[this.sortAttribute]);
-      } else {
-        return this.sortDirection === "asc"
-          ? a[this.sortAttribute] - b[this.sortAttribute]
-          : b[this.sortAttribute] - a[this.sortAttribute];
-      }
-    });
-  },
-  toggleSortDirection() {
-    this.sortDirection = this.sortDirection === "asc" ? "desc" : "asc";
-    this.sortLessons(); // Re-sort lessons when direction changes
-  },
+  validateForm() {
+      const nameRegex = /^[a-zA-Z\s]+$/;
+      const phoneRegex = /^[0-9]+$/;
+
+      this.isNameValid = nameRegex.test(this.name);
+      this.isPhoneValid = phoneRegex.test(this.phone);
+    },
+    submitOrder() {
+      alert(`Order submitted!`);
+      
+      // Optionally, you can reset the form after submission
+      this.name = '';
+      this.phone = '';
+    }
+    
 };
 </script>
 
