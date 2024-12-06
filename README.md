@@ -6,7 +6,7 @@ a web app, which allows students and their parents to buy after school classes a
 ## Links
 
 ### Vue.js App
-- [GitHub Repository](https://github.com/Mboogsls/your-vue-repo)  
+- [GitHub Repository](https://github.com/Mboogsls/BookLesson/VueApp)  
 - [GitHub Pages](https://github.com/Mboogsls/BookLesson)  
 
 ### Express.js App
