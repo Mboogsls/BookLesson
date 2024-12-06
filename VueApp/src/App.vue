@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" style="height:40px;" src="./assets/logo.png">
+  <img alt="Vue logo" style="height:40px;" src="./assets/logo.png"> BookLesson
   <LessonList msg="Welcome to Your Vue.js App"/>
 </template>
 
