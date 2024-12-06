@@ -131,7 +131,7 @@
         </div>
 
      <!-- Cart Section -->
-<div v-if="cart.length > 0" class="card mt-3">
+<div v-if="cart.length > 0" class="card mt-4">
   <div class="card-header">
     <h6>Your Cart</h6>
   </div>
