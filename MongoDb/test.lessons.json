@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "6752d4dfe33a6220eb6de523"
+  },
+  "subject": "sksk",
+  "location": "sksk",
+  "price": 40,
+  "spaces": 4,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67531b78e33a6220eb6de576"
+  },
+  "subject": "Maths",
+  "location": "Zaria",
+  "price": 300,
+  "spaces": 20,
+  "__v": 0
+}]
