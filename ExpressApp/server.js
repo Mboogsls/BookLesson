@@ -6,12 +6,17 @@ require('dotenv').config();
 
 const app = express();
 
+
+
+
 // Middleware
 app.use(cors({
   origin: '*', // Allows all origins
   methods: 'GET, POST, PUT, DELETE', // Allowed HTTP methods
   allowedHeaders: 'Content-Type, Authorization', // Allowed headers
 }));
+
+
 
 app.use(express.json());
 
