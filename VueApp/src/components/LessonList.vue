@@ -113,7 +113,7 @@
             <div
               v-for="lesson in filteredLessons"
               :key="lesson._id"
-              class="card colmb-3 card-body mb-2"
+              class="card col-mb-3 card-body mb-2"
             >
               <h6 class="mb-1">{{ lesson.subject }}</h6>
               <p class="mb-1">{{ lesson.location }}</p>
