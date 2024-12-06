@@ -108,7 +108,7 @@
           </div>
 
           <!-- Lesson List -->
-          <div class="lesson-list row">
+          <div class="lesson-list row mb-2">
             <div
               v-for="lesson in filteredLessons"
               :key="lesson._id"
@@ -130,7 +130,7 @@
         </div>
 
      <!-- Cart Section -->
-<div v-if="cart.length > 0" class="card mt-4">
+<div v-if="cart.length > 0" class="card mt-3">
   <div class="card-header">
     <h6>Your Cart</h6>
   </div>
