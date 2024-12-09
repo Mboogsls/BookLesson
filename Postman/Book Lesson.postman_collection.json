@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "e5df7182-d8c1-4f24-b9cd-61c7574c5081",
+		"name": "Book Lesson",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40253528"
+	},
+	"item": [
+		{
+			"name": "Get Lessons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{Host}}/lessons"
+			},
+			"response": [
+				{
+					"name": "Get Lessons",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{Host}}/lessons"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"_id\": \"6752d4dfe33a6220eb6de523\",\r\n        \"subject\": \"sksk\",\r\n        \"location\": \"sksk\",\r\n        \"price\": 40,\r\n        \"spaces\": 4,\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"67531b78e33a6220eb6de576\",\r\n        \"subject\": \"Maths\",\r\n        \"location\": \"Zaria\",\r\n        \"price\": 300,\r\n        \"spaces\": 20,\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"67548acb7a6258fd092ef100\",\r\n        \"subject\": \"B\",\r\n        \"location\": \"B\",\r\n        \"price\": 7,\r\n        \"spaces\": 6,\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"67548acc7a6258fd092ef102\",\r\n        \"subject\": \"B\",\r\n        \"location\": \"B\",\r\n        \"price\": 7,\r\n        \"spaces\": 6,\r\n        \"__v\": 0\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Get ByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{Host}}/lessons/6752d4dfe33a6220eb6de523"
+			},
+			"response": [
+				{
+					"name": "Get ByID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{Host}}/lessons"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"_id\": \"6752d4dfe33a6220eb6de523\",\r\n    \"subject\": \"sksk\",\r\n    \"location\": \"sksk\",\r\n    \"price\": 40,\r\n    \"spaces\": 4,\r\n    \"__v\": 0\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Lesson",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subject\": \"sksk\",\r\n    \"location\": \"sksk\",\r\n    \"price\": 40,\r\n    \"spaces\": 4,\r\n    \"__v\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{Host}}/lessons"
+			},
+			"response": [
+				{
+					"name": "Create Lesson",
+					"originalRequest": {
+						"method": "POST",
+						"header": []
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"_id\": \"6752d4dfe33a6220eb6de523\",\r\n        \"subject\": \"sksk\",\r\n        \"location\": \"sksk\",\r\n        \"price\": 40,\r\n        \"spaces\": 4,\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"67531b78e33a6220eb6de576\",\r\n        \"subject\": \"Maths\",\r\n        \"location\": \"Zaria\",\r\n        \"price\": 300,\r\n        \"spaces\": 20,\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"67548acb7a6258fd092ef100\",\r\n        \"subject\": \"B\",\r\n        \"location\": \"B\",\r\n        \"price\": 7,\r\n        \"spaces\": 6,\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"67548acc7a6258fd092ef102\",\r\n        \"subject\": \"B\",\r\n        \"location\": \"B\",\r\n        \"price\": 7,\r\n        \"spaces\": 6,\r\n        \"__v\": 0\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Update Lesson",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"6752d4dfe33a6220eb6de523\",\r\n    \"subject\": \"maths\",\r\n    \"location\": \"maryland\",\r\n    \"price\": 40,\r\n    \"spaces\": 4,\r\n    \"__v\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{Host}}/lessons/6752d4dfe33a6220eb6de523"
+			},
+			"response": [
+				{
+					"name": "Update Lesson",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6752d4dfe33a6220eb6de523\",\r\n    \"subject\": \"maths\",\r\n    \"location\": \"maryland\",\r\n    \"price\": 40,\r\n    \"spaces\": 4,\r\n    \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Host}}/lessons/6752d4dfe33a6220eb6de523"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"_id\": \"6752d4dfe33a6220eb6de523\",\r\n    \"subject\": \"maths\",\r\n    \"location\": \"maryland\",\r\n    \"price\": 40,\r\n    \"spaces\": 4,\r\n    \"__v\": 0\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{Host}}/orders"
+			},
+			"response": []
+		}
+	]
+}
